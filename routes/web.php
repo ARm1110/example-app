@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/home',[HomeController::class,'home']);
+Route::get('/',[HomeController::class,'home']);
 Route::get('/login',[\App\Http\Controllers\LoginController::class,'showForm']);
 
+Route::resource('/book',\App\Http\Controllers\BookController::class);
