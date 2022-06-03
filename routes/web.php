@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\FormController;
-use App\Http\Controllers\HomeController;
-
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', [HomeController::class, 'show']);
+Route::get('/home',[HomeController::class,'home']);
+Route::get('/login',[\App\Http\Controllers\LoginController::class,'showForm']);
 
-
-Route::get('/login', [FormController::class, 'formLogin']);
