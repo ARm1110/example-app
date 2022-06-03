@@ -1,19 +1,21 @@
 @extends('layouts.layout')
 
-
-
-
 @section('content')
-    @foreach ($inputs as $input)
-        <x-input>
-            <x-slot name="input">
-                {{ $input }}
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+        @foreach($labels  as $label)
+            <x-input>
+                <x-slot name="label">
+                    {{$label}}
+                </x-slot>
+            </x-input>
+        @endforeach
+
+        <x-button>
+            <x-slot name="button">
+                {{$signIn}}
             </x-slot>
-        </x-input>
-    @endforeach
-    <x-button>
-        <x-slot name="button">
-            {{ $button }}
-        </x-slot>
-    </x-button>
+        </x-button>
+    </form>
+
 @endsection
